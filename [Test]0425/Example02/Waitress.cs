@@ -9,16 +9,20 @@ namespace Example02
     class Waitress
     {
         DinerMenu dinerMenu;
+        PancakeHouseMenu pancakeHouseMenu;
 
-        public Waitress(DinerMenu dinerMenus)
+        public Waitress(DinerMenu dinerMenus, PancakeHouseMenu pancakeHouseMenus)
         {
             this.dinerMenu = dinerMenus;
+            this.pancakeHouseMenu = pancakeHouseMenus;
         }
 
         public void PrintMenu()
         {
             Iterator dinerIterator = dinerMenu.CreateIterator();
             PrintMenu(dinerIterator);
+            Iterator pancakeHouseMenuIterator = pancakeHouseMenu.CreateIterator();
+            PrintMenu(pancakeHouseMenuIterator);
         }
 
         public void PrintMenu(Iterator iterator)
